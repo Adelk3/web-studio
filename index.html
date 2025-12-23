@@ -33,14 +33,16 @@
     <main>
         <section class="first-section">
             <h1>Ефективні рішення для вашого бізнесу</h1>
-            <label for="show_label"><p class="button">Замовити послугу</p></label>
-            <div class="hidden-box">
-                <button class="close">X</button>
-                <h3>Залиште свої дані, ми вам передзвонимо</h3>
+            <label for="show_label"><p class="btn-order">Замовити послугу</p></label>
+            <input type="checkbox" id="show_label" class="button">
+            <div class="hidden-box container2">
+               <label for="show_label"><span class="close">X</span></label> 
+                <h3> <b>Залиште свої дані, ми вам передзвонимо</b></h3>
                 <form action="">
                     <label for="name">
                         <p>Ім'я</p>
-                        <input type="text">
+                        <input type="text" >
+                        <svg class="svg"> <use href="./image/sprite-three.svg#"></use></svg>
                     </label>
 
                     <label for="number">
@@ -59,7 +61,8 @@
                     </label>
 
                     <label for="agree-button">
-                        <input type="checkbox" placeholder="Погоджуюся з розсилкою та приймаю Умови договору">
+                        <input type="checkbox" <p>Погоджуюся з розсилкою та приймаю <span class="blue-text">Умови договору</span></p> 
+
                     </label>
 
                     <button class="send">Відправити </button>
