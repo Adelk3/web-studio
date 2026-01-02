@@ -492,4 +492,8 @@ align-items: center;
 	color: rgba(33, 33, 33, 0.2);
 }
 
-.text
+.textarea{
+	resize: none;
+	width: 448px;
+	height: 142px;
+}
