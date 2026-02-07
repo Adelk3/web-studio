@@ -5,7 +5,7 @@
 	--accent-hover: #188ce8;
 	--primary-text: #212121;
 	--secondary-text: #757575;
-	--white-color: #ffffff;
+	--accent-second-color: #ffffff;
 	--black-color: #000000;
 	--bg-dark: #2f303a;
 	--bg-light: #f5f4fa;
@@ -159,7 +159,7 @@ body {
 .hero-title {
 	font-size: 44px;
 	font-weight: 900;
-	color: var(--white-color);
+	color: var(--accent-second-color);
 	
 	line-height: 60px;
 	letter-spacing: 0.06em;
@@ -170,8 +170,14 @@ body {
 	
 }
 
+
+
+
+
+
+
 .hero-button {
-	color: var(--white-color);
+	color: var(--accent-second-color);
 	background-color: var(--accent-color);
 	border: none;
 	border-radius: 4px;
@@ -185,34 +191,43 @@ letter-spacing: 0.06em;
 line-height: 30px;
 }
 
-.hero-button:hover,
-.hero-button:focus {
-	background-color: var(--accent-hover);
+
+
+
+
+
+
+
+.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
 }
 
-
-.hidden-box {
+.hero_modal-backdrop {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: var(--white-color);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-modal {
+	position: relative;
+	background-color: var(--accent-second-color);
 	width: 528px;
 	padding: 40px;
 	box-shadow: var(--card-shadow);
 	border-radius: 4px;
-	z-index: 50;
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hidden-box.active {
-	opacity: 1;
-	pointer-events: all;
-}
-
-.close {
+.hero_modal-close {
 	position: absolute;
 	top: 8px;
 	right: 8px;
@@ -225,78 +240,165 @@ line-height: 30px;
 	border: 1px solid var(--backdrop);
 	border-radius: 50%;
 	cursor: pointer;
-	font-size: 18px;
-	color: var(--black-color);
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-title {
+.hero_modal-close:hover,
+.hero_modal-close:focus {
+	border-color: var(--accent-color);
+}
+
+.hero_modal-close svg {
+	width: 18px;
+	height: 18px;
+	fill: var(--black-color);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero_modal-close:hover svg,
+.hero_modal-close:focus svg {
+	fill: var(--accent-color);
+}
+
+.hero_modal-title {
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
 	color: var(--primary-text);
-	margin-bottom: 12px;
+	margin: 0 0 12px 0;
+	letter-spacing: 0.03em;
 }
 
-.hidden-box form {
+.hero_modal-wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
 
-.hidden-box label {
+
+
+.hero_modal-label {
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-}
-
-.input-text {
 	font-size: 12px;
 	color: var(--secondary-text);
 	letter-spacing: 0.01em;
+	position: relative;
+	text-align: start;
 }
 
-.hidden-box input[type="text"],
-.hidden-box input[type="number"],
-.hidden-box input[type="email"],
-.hidden-box textarea {
+.hero_modal-input {
 	border: 1px solid var(--modal-border);
 	border-radius: 4px;
-	padding: 12px 16px;
+	padding: 12px 12px 12px 42px;
 	font-size: 14px;
 	outline: none;
 	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hidden-box input:focus,
-.hidden-box textarea:focus {
-	border-color: var(--accent-color);
-}
-
-.hidden-box textarea {
-	resize: none;
-	height: 120px;
-	font-family: inherit;
-}
-
-.send {
-	background-color: var(--accent-color);
-	color: var(--white-color);
-	border: none;
-	border-radius: 4px;
-	padding: 10px 52px;
-	font-weight: 700;
-	font-size: 16px;
-	cursor: pointer;
-	margin-top: 20px;
-	align-self: center;
-	box-shadow: var(--button-shadow);
+.hero_modal-input:focus, .hero_modal-input:hover+.hero_modal-icon{
+	fill: var(--accent-color);
 	
 }
 
-.send:hover,
-.send:focus {
-	background-color: var(--accent-hover);
+.hero_modal-input:hover{
+	border-color: var(--accent-color);
 }
+
+.hero_modal-icon {
+	position: absolute;
+	left: 12px;
+	bottom: 11px;
+	width: 18px;
+	height: 18px;
+	fill: var(--primary-text);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.hero_modal-icon:hover{
+	fill:var(--accent-color) ;
+}
+
+.hero_modal-input:focus + .hro_modal-icon {
+	fill: var(--accent-color);
+}
+
+.hero_modal-text_area {
+	border: 1px solid var(--modal-border);
+	border-radius: 4px;
+	padding: 12px 16px;
+	font-size: 14px;
+	resize: none;
+	height: 120px;
+	font-family: inherit;
+	outline: none;
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero_modal-text_area:focus, .hero_modal-text_area:hover {
+	border-color: var(--accent-color);
+}
+
+
+.hero_modal-text_area::placeholder {
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.agree-button{
+	margin-top: 20px;
+}
+
+.hero_modal-form label[for="agree-button"] {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	color: var(--secondary-text);
+	letter-spacing: 0.03em;
+	margin-top: 10px;
+}
+
+.hero_modal-form label[for="agree-button"] input[type="checkbox"] {
+	width: 16px;
+	height: 15px;
+	cursor: pointer;
+}
+
+.hero_modal-form label[for="agree-button"] a {
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+.hero_modal-form label[for="agree-button"] a:hover {
+	color: var(--accent-hover);
+}
+
+.hero_modal-send{
+		color: var(--accent-second-color);
+	background-color: var(--accent-color);
+	border: none;
+	border-radius: 4px;
+	padding: 10px 52px;
+	font-family: var(--main-font);
+	font-weight: 700;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: var(--button-shadow);
+letter-spacing: 0.06em;
+line-height: 30px;
+margin-top:30px ;
+}
+
+
+.hero_modal-send:hover{
+background-color:var(--accent-hover) ;
+}
+
+
+
+
 
 
 .job {
@@ -457,7 +559,7 @@ letter-spacing: 0.03em;
 
 .pic-text {
 	text-align: center;
-	color: var(--white-color);
+	color: var(--accent-second-color);
 	font-weight: 700;
 	font-size: 14px;
 	letter-spacing: 0.03em;
@@ -565,7 +667,7 @@ letter-spacing: 0.03em;
 
 .team_icon-link:hover .icon,
 .team_icon-link:focus .icon {
-	fill: var(--white-color);
+	fill: var(--accent-second-color);
 }
 
 .icon {
@@ -667,7 +769,7 @@ letter-spacing: 0.03em;
 	font-family: 'Raleway', sans-serif;
 	font-size: 26px;
 	font-weight: 700;
-	color: var(--white-color);
+	color: var(--accent-second-color);
 	display: inline-block;
 	margin-bottom: 20px;
 }
@@ -711,7 +813,7 @@ letter-spacing: 0.03em;
 	font-weight: 700;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
-	color: var(--white-color);
+	color: var(--accent-second-color);
 	margin: 0;
 }
 
@@ -737,5 +839,5 @@ letter-spacing: 0.03em;
 }
 
 .footer-social_link .icon {
-	fill: var(--white-color);
+	fill: var(--accent-second-color);
 }

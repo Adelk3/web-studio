@@ -15,7 +15,7 @@
   <body>
     <header class="header">
       <div class="container header-container">
-        <a class="header-logo" href=""
+        <a class="header-logo" href="./index.html"
           ><span class="header-logo-span">Web</span>Studio</a
         >
         <div class="header-wrapper">
@@ -56,42 +56,49 @@
             вашого бізнесу
           </h1>
 
-          <button class="hero-button">Замовити послугу</button>
+          <button class="hero-button" data-modal-open>Замовити послугу</button>
 
-          <div class="hidden-box">
-            <label for="show_label"><span class="close">X</span></label>
-            <h3 class="menu-title">Залиште свої дані, ми вам передзвонимо</h3>
-            <form action="">
-              <label for="name">
-                <p class="input-text">Ім'я</p>
-                <input type="text" />
+          <div class="is-hidden hero_modal-backdrop" data-modal>
+			<div class="hero-modal">
+            <button class="hero_modal-close" data-modal-close><svg><use href="./image/third-sprite.svg#icon-close-button"></use></svg></button>
+            <h3 class="hero_modal-title">Залиште свої дані, ми вам передзвонимо</h3>
+            <form action="" class="hero_modal-form">
+				<div class="hero_modal-wrapper">
+              <label class="hero_modal-label" for="name">
+                Ім'я
+                <input type="text" class="hero_modal-input" />
+				<svg class="hero_modal-icon"><use href="./image/third-sprite.svg#icon-person"></use></svg>
               </label>
 
-              <label for="number">
-                <p class="input-text">Телефон</p>
-                <input type="number" />
+              <label class="hero_modal-label" for="number">
+               Телефон
+                <input type="tel" class="hero_modal-input" />
+				<svg class="hero_modal-icon"><use href="./image/third-sprite.svg#icon-phone"></use></svg>
               </label>
 
-              <label for="email">
-                <p class="input-text">Пошта</p>
-                <input type="email" />
+              <label class="hero_modal-label" for="email">
+                Пошта
+                <input type="email" class="hero_modal-input" />
+				<svg class="hero_modal-icon"><use href="./image/third-sprite.svg#icon-email"></use></svg>
               </label>
 
-              <label for="comment">
-                <p class="input-text">Коментар</p>
-                <textarea name="" id="" placeholder="Введіть текст"></textarea>
+              <label class="hero_modal-label" for="comment">
+                Коментар
+                <textarea name="" id="" class="hero_modal-text_area" placeholder="Введіть текст"></textarea>
               </label>
-
+</div>
               <label for="agree-button">
                 <input
                   type="checkbox"
-                  placeholder="Погоджуюся з розсилкою та приймаю Умови договору"
                 />
+				Погоджуюся з розсилкою та приймаю <a href="">Умови договору</a>
               </label>
 
-              <button class="send">Відправити</button>
+              <button class="hero_modal-send">Відправити</button>
             </form>
+			</div>
           </div>
+
         </div>
       </section>
 
@@ -393,5 +400,6 @@
         </div>
       </div>
     </footer>
+	 <script src="./js/modal.js"></script>
   </body>
 </html>
