@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../Downloads/icomoon (8)"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "web-studio"
+  }
+}
