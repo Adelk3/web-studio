@@ -109,7 +109,7 @@ transition-property: color;
   left: 0px;
   top: 43px;
   height: 3px;
-  transition: 10s;
+  transition: 250ms;
 }
 
 .header-link_active::after{
@@ -132,13 +132,13 @@ transition-property: color;
 
 
 
-.header-contact_list {
+.header_contact-list {
 	display: flex;
 	flex-direction: row;
 	gap: 50px;
 }
 
-.header-contact_link {
+.header_contact-link {
 	color: var(--secondary-text);
 	font-weight: 500;
 	font-size: 14px;
@@ -152,10 +152,24 @@ transition-property: color;
 	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
-.header-contact_link:hover,
-.header-contact_link:focus {
+.header_contact-link:hover,
+.header_contact-link:focus {
 	color: var(--accent-color);
 }
+
+.header_contact-link_icon{
+	width: 16px;
+	height: 12px;
+	fill:var(--secondary-text) ;
+		transition-property: fill;
+		transition-duration: 250ms;
+	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header_contact-link_icon:hover{
+	fill: var(--accent-color);
+}
+
 
 .header-icon {
 	margin-right: 10px;
@@ -463,32 +477,32 @@ background-color:var(--accent-hover) ;
 	border-radius: 4px;
 }
 
-.one::before {
-	content: url(./image/antena.png);
+.job-item:nth-child(1)::before {
+	content: url(../image/antena.png);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 }
 
-.two::before {
-	content: url(./image/clock.png);
+.job-item:nth-child(2)::before {
+	content: url(../image/clock.png);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 }
 
-.three::before {
-	content: url(./image/diagram.png);
+.job-item:nth-child(3)::before {
+	content: url(../image/diagram.png);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 }
 
-.four::before {
-	content: url(./image/astronaut.png);
+.job-item:nth-child(4)::before {
+	content: url(../image/astronaut.png);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -500,37 +514,6 @@ content: "";
 background-color: rgba(245, 244, 250, 1);
 background-image: ;
 }
-
-.job-item h3,
-.content h5 {
-	font-size: 14px;
-	font-weight: 700;
-	letter-spacing: 0.03em;
-	text-transform: uppercase;
-	color: var(--primary-text);
-	margin: 0 0 10px 0;
-}
-
-.job-item p {
-	font-size: 14px;
-	line-height: 1.71;
-	letter-spacing: 0.03em;
-	color: var(--secondary-text);
-	margin: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .work {
@@ -637,7 +620,7 @@ letter-spacing: 0.03em;
 }
 
 .team-item{
-	background-color: var(--white-color);
+	background-color: var(--accent-second-color);
 	box-shadow: var(--card-shadow);
 	border-radius: 0px 0px 4px 4px;
 	
@@ -673,7 +656,7 @@ letter-spacing: 0.03em;
 .team-icons-list {
 	display: flex;
 	justify-content: center;
-	gap: 10px;
+	gap: 39px;
 	padding: 0;
 	list-style: none;
 }

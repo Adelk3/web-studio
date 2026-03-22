@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Studio</title>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -15,7 +19,7 @@
   <body>
     <header class="header">
       <div class="container header-container">
-        <a class="header-logo" href="./index.html"
+        <a class="header-logo animate__animated animate__zoomInUp" href="./index.html"
           ><span class="header-logo-span">Web</span>Studio</a
         >
         <div class="header-wrapper">
@@ -32,15 +36,15 @@
               </li>
             </ul>
           </nav>
-          <ul class="header-contact_list">
-            <li class="header-contact_item">
-              <a class="header-contact_link" href="mailto:info@devstudio.com">
-                info@devstudio.com
+          <ul class="header_contact-list">
+            <li class="header_contact-item">
+              <a class="header_contact-link" href="mailto:info@devstudio.com">
+              <svg class="header_contact-link_icon"><use href="./image/third-sprite.svg#icon-email"></use></svg>  info@devstudio.com
               </a>
             </li>
-            <li class="header-contact_item">
-              <a class="header-contact_link" href="tel:+380961111111">
-                +38 096 111 11 11
+            <li class="header_contact-item">
+              <a class="header_contact-link" href="tel:+380961111111">
+               <svg class="header_contact-link_icon"><use href="./image/third-sprite.svg#icon-phone"></use></svg> +38 096 111 11 11
               </a>
             </li>
           </ul>

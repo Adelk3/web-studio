@@ -235,16 +235,18 @@ transition-property: background-color;
 	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
-/* . */
+
 .main_portfolio-item {
-  border: 1px solid lightgray;
-  width: 370px;
+ flex-basis: calc((100% - 60px) / 3);
+border-bottom: 1px solid rgba(238, 238, 238, 1);
+border-right:1px solid rgba(238, 238, 238, 1) ;
+border-left: 1px solid rgba(238, 238, 238, 1);
 }
 
 .main_portfolio-wrap {
   padding: 20px 24px;
 }
-/* . */
+
 .main_portfolio-title {
   font-family: var(--main-font);
   font-weight: 700;
@@ -268,8 +270,8 @@ transition-property: background-color;
   flex-wrap: wrap;
 
   gap: 20px;
-  justify-content: center;
-  align-items: center;
+
+
 }
 
 .main_portfolio {
